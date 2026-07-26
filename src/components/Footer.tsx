@@ -8,8 +8,8 @@ export default function Footer() {
           
           <div>
             <Link href="/" className="inline-block mb-6">
-              <span className="font-bold text-2xl tracking-wider text-yellow-500">PRIME</span>
-              <span className="font-semibold text-2xl tracking-wider text-white ml-1">DOORS</span>
+              <span className="font-bold text-2xl tracking-wider text-yellow-500">ANJALI</span>
+              <span className="font-semibold text-2xl tracking-wider text-white ml-2">ENTERPRISES</span>
             </Link>
             <p className="text-sm mb-6 leading-relaxed">
               Premium manufacturer and retailer of high-quality doors and windows. Elevating homes with elegant, durable, and modern designs since 2010.
@@ -40,15 +40,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg className="h-5 w-5 text-yellow-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span>123 Business Avenue, Design District, City, 10001</span>
+                <span>INFRONT OF DIWAKAR HOSPITAL GANGA JI ROAD KARWI CHITRAKOOT 210205 INDIA</span>
               </li>
               <li className="flex items-center">
                 <svg className="h-5 w-5 text-yellow-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                <span>+1 (234) 567-8900</span>
+                <span>+91 9935914480, +91 9278404902</span>
               </li>
               <li className="flex items-center">
                 <svg className="h-5 w-5 text-yellow-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>contact@primedoors.com</span>
+                <span>anjalienterprises4480@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -57,23 +57,19 @@ export default function Footer() {
             <h3 className="text-white text-lg font-bold mb-6">Business Hours</h3>
             <ul className="space-y-3">
               <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span className="text-white">9:00 AM - 7:00 PM</span>
+                <span>Monday - Sunday</span>
+                <span className="text-white">10:00 AM - 8:00 PM</span>
               </li>
               <li className="flex justify-between">
-                <span>Saturday</span>
-                <span className="text-white">10:00 AM - 5:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span className="text-yellow-500 font-medium">Closed</span>
+                <span>Status</span>
+                <span className="text-green-500 font-medium">Open All Day</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Prime Doors & Windows. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Anjali Enterprises. All rights reserved.</p>
           <div className="mt-4 md:mt-0 space-x-4">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

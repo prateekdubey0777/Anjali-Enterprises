@@ -7,11 +7,14 @@ interface Product {
   category: string;
   price: number;
   discount_price?: number;
+  description?: string;
   images: string[];
+  unit?: string;
 }
 
 export default function ProductCard({ product }: { product: Product }) {
   const hasDiscount = product.discount_price && product.discount_price < product.price;
+  const unitLabel = product.unit ? `/ ${product.unit}` : '/ sq. ft.';
 
   return (
     <Link href={`/product/${product.id}`} className="group block h-full">
@@ -32,16 +35,19 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="p-5 flex-1 flex flex-col">
           <p className="text-sm text-blue-900 font-medium mb-1 uppercase tracking-wider">{product.category}</p>
           <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
+          {product.description && (
+            <p className="text-gray-500 text-sm line-clamp-2 mt-1 mb-2">{product.description}</p>
+          )}
           
           <div className="mt-auto pt-4 flex items-center justify-between border-t border-gray-100">
             <div className="flex flex-col">
               {hasDiscount ? (
                 <>
-                  <span className="text-sm text-gray-400 line-through">${product.price.toFixed(2)}</span>
-                  <span className="text-xl font-bold text-blue-900">${product.discount_price!.toFixed(2)}</span>
+                  <span className="text-sm text-gray-400 line-through">₹{product.price.toFixed(2)} {unitLabel}</span>
+                  <span className="text-xl font-bold text-blue-900">₹{product.discount_price!.toFixed(2)} {unitLabel}</span>
                 </>
               ) : (
-                <span className="text-xl font-bold text-blue-900">${product.price.toFixed(2)}</span>
+                <span className="text-xl font-bold text-blue-900">₹{product.price.toFixed(2)} {unitLabel}</span>
               )}
             </div>
             <span className="text-yellow-600 font-medium text-sm group-hover:text-yellow-500 flex items-center transition-colors">
