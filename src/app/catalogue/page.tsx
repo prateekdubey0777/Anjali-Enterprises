@@ -51,7 +51,7 @@ export default function CataloguePage() {
             <input 
               type="text" 
               placeholder="Search by product name or SKU..." 
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -59,7 +59,7 @@ export default function CataloguePage() {
           
           <div className="flex w-full md:w-auto gap-4 flex-col sm:flex-row">
             <select 
-              className="px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white min-w-[150px]"
+              className="px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[150px]"
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
             >
@@ -69,7 +69,7 @@ export default function CataloguePage() {
             </select>
 
             <select 
-              className="px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white min-w-[150px]"
+              className="px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[150px]"
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
             >
@@ -99,7 +99,7 @@ export default function CataloguePage() {
             <p className="text-gray-500">Try adjusting your search or filters to find what you're looking for.</p>
             <button 
               onClick={() => {setSearchTerm(''); setFilterType('all'); setSortOption('newest');}}
-              className="mt-6 text-yellow-600 font-bold hover:text-yellow-500"
+              className="mt-6 text-blue-100 font-bold hover:text-white"
             >
               Clear all filters
             </button>

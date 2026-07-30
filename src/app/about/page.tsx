@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
+            <div className="w-16 h-1 bg-white mb-6"></div>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Anjali Enterprises started with a simple mission: to provide homeowners and builders with high-quality, beautifully designed doors and windows without the exorbitant price tag. What began as a small shop has grown into a leading manufacturer and retailer.
             </p>
@@ -39,7 +39,7 @@ export default function AboutPage() {
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Mission & Vision</h2>
-            <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
+            <div className="w-16 h-1 bg-white mb-6"></div>
             <div className="mb-8">
               <h3 className="text-xl font-bold text-blue-900 mb-2">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -59,19 +59,19 @@ export default function AboutPage() {
         <div className="bg-gray-50 rounded-3xl p-12 mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-yellow-500 mb-2">10+</div>
+              <div className="text-4xl font-bold text-white mb-2">10+</div>
               <div className="text-gray-900 font-medium">Years Experience</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-yellow-500 mb-2">5000+</div>
+              <div className="text-4xl font-bold text-white mb-2">5000+</div>
               <div className="text-gray-900 font-medium">Happy Customers</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-yellow-500 mb-2">500+</div>
+              <div className="text-4xl font-bold text-white mb-2">500+</div>
               <div className="text-gray-900 font-medium">Products</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-yellow-500 mb-2">50+</div>
+              <div className="text-4xl font-bold text-white mb-2">50+</div>
               <div className="text-gray-900 font-medium">Expert Staff</div>
             </div>
           </div>

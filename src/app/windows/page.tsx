@@ -51,7 +51,7 @@ function WindowsContent() {
                 <li>
                   <button 
                     onClick={() => router.push('/windows')}
-                    className={`text-left w-full font-medium transition-colors ${!categoryQuery ? 'text-yellow-600' : 'text-gray-600 hover:text-yellow-600'}`}
+                    className={`text-left w-full font-medium transition-colors ${!categoryQuery ? 'text-blue-100' : 'text-gray-600 hover:text-blue-100'}`}
                   >
                     All Windows
                   </button>
@@ -60,7 +60,7 @@ function WindowsContent() {
                   <li key={cat.id}>
                     <button 
                       onClick={() => router.push(`/windows?category=${encodeURIComponent(cat.name)}`)}
-                      className={`text-left w-full font-medium transition-colors ${categoryQuery?.toLowerCase() === cat.name.toLowerCase() ? 'text-yellow-600' : 'text-gray-600 hover:text-yellow-600'}`}
+                      className={`text-left w-full font-medium transition-colors ${categoryQuery?.toLowerCase() === cat.name.toLowerCase() ? 'text-blue-100' : 'text-gray-600 hover:text-blue-100'}`}
                     >
                       {cat.name}
                     </button>
@@ -77,7 +77,7 @@ function WindowsContent() {
               <div className="flex items-center space-x-2 w-full sm:w-auto">
                 <span className="text-sm text-gray-600 whitespace-nowrap">Sort by:</span>
                 <select 
-                  className="w-full sm:w-auto border border-gray-200 rounded-lg text-sm p-2 bg-gray-50 outline-none focus:ring-2 focus:ring-yellow-500"
+                  className="w-full sm:w-auto border border-gray-200 rounded-lg text-sm p-2 bg-gray-50 outline-none focus:ring-2 focus:ring-blue-500"
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value)}
                 >

@@ -66,7 +66,7 @@ export default function GalleryPage() {
                      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
                    </div>
                 </div>
-                <span className="text-yellow-400 text-sm font-bold uppercase tracking-wider mb-1 relative z-10">{item.category}</span>
+                <span className="text-blue-200 text-sm font-bold uppercase tracking-wider mb-1 relative z-10">{item.category}</span>
                 <h3 className="text-white text-xl font-bold relative z-10">{item.title}</h3>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function GalleryPage() {
       {selectedItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-8" onClick={() => setSelectedItem(null)}>
           <button 
-            className="absolute top-6 right-6 text-white hover:text-yellow-500 transition-colors bg-black/50 p-2 rounded-full"
+            className="absolute top-6 right-6 text-white hover:text-white transition-colors bg-black/50 p-2 rounded-full"
             onClick={() => setSelectedItem(null)}
           >
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

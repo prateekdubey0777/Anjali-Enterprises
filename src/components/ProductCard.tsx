@@ -20,7 +20,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <Link href={`/product/${product.id}`} className="group block h-full">
       <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden h-full flex flex-col relative">
         {hasDiscount && (
-          <div className="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+          <div className="absolute top-4 left-4 bg-white text-white text-xs font-bold px-3 py-1 rounded-full z-10">
             SALE
           </div>
         )}
@@ -50,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 <span className="text-xl font-bold text-blue-900">₹{product.price.toFixed(2)} {unitLabel}</span>
               )}
             </div>
-            <span className="text-yellow-600 font-medium text-sm group-hover:text-yellow-500 flex items-center transition-colors">
+            <span className="text-blue-100 font-medium text-sm group-hover:text-white flex items-center transition-colors">
               View Details 
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
