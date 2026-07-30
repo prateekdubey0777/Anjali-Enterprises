@@ -25,7 +25,7 @@ export default function AboutPage() {
               Anjali Enterprises started with a simple mission: to provide homeowners and builders with high-quality, beautifully designed doors and windows without the exorbitant price tag. What began as a small shop has grown into a leading manufacturer and retailer.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              With over a decade of experience, we've honed our craft, sourcing the best materials globally and employing skilled artisans. Every product in our catalogue represents our commitment to durability, aesthetics, and unmatched value.
+              With over a decade of experience, we&apos;ve honed our craft, sourcing the best materials globally and employing skilled artisans. Every product in our catalogue represents our commitment to durability, aesthetics, and unmatched value.
             </p>
           </div>
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">

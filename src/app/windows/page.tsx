@@ -98,7 +98,7 @@ function WindowsContent() {
             ) : (
               <div className="bg-white p-12 rounded-2xl shadow-sm text-center">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">No windows found</h3>
-                <p className="text-gray-500">We couldn't find any windows matching this category.</p>
+                <p className="text-gray-500">We couldn&apos;t find any windows matching this category.</p>
               </div>
             )}
           </div>

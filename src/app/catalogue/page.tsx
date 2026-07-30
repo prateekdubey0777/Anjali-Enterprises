@@ -10,7 +10,7 @@ export default function CataloguePage() {
   const [sortOption, setSortOption] = useState('newest');
   
   const filteredProducts = useMemo(() => {
-    let result = mockProducts.filter(product => {
+    const result = mockProducts.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                             product.sku.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesType = filterType === 'all' || product.type === filterType;
@@ -96,7 +96,7 @@ export default function CataloguePage() {
           <div className="bg-white p-16 rounded-2xl shadow-sm text-center">
             <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <h3 className="text-xl font-bold text-gray-900 mb-2">No products found</h3>
-            <p className="text-gray-500">Try adjusting your search or filters to find what you're looking for.</p>
+            <p className="text-gray-500">Try adjusting your search or filters to find what you&apos;re looking for.</p>
             <button 
               onClick={() => {setSearchTerm(''); setFilterType('all'); setSortOption('newest');}}
               className="mt-6 text-blue-100 font-bold hover:text-white"

@@ -81,36 +81,48 @@ export default function ContactPage() {
           <div className="bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">Send us a Message</h2>
             
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const phone = formData.get('phone');
+              const city = formData.get('city');
+              const product = formData.get('product');
+              const message = formData.get('message');
+              
+              const text = `Hello Anjali Enterprises!\n\nName: ${name}\nPhone: ${phone}\nCity: ${city}\nProduct/SKU: ${product}\n\nMessage:\n${message}`;
+              const whatsappUrl = `https://wa.me/919935914480?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="John Doe" />
+                  <input name="name" required type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none text-gray-900" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="+91 9935914480" />
+                  <input name="phone" required type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none text-gray-900" placeholder="+91 9935914480" />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="New York" />
+                  <input name="city" type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none text-gray-900" placeholder="Karwi" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Product Name/SKU</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="e.g. DOOR-TEAK-001" defaultValue="" />
+                  <input name="product" type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none text-gray-900" placeholder="e.g. DOOR-TEAK-001" defaultValue="" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none" placeholder="How can we help you?"></textarea>
+                <textarea name="message" required rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none text-gray-900" placeholder="How can we help you?"></textarea>
               </div>
 
-              <button type="submit" className="w-full bg-white hover:bg-gray-100 text-blue-950 font-bold py-4 rounded-xl transition-all shadow-md hover:shadow-lg">
-                Submit Inquiry
+              <button type="submit" className="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-4 rounded-xl transition-all shadow-md hover:shadow-lg">
+                Submit Inquiry via WhatsApp
               </button>
             </form>
           </div>
