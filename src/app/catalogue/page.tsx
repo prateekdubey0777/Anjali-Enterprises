@@ -18,11 +18,7 @@ export default function CataloguePage() {
     });
 
     // Sorting logic
-    if (sortOption === 'price-asc') {
-      result.sort((a, b) => a.price - b.price);
-    } else if (sortOption === 'price-desc') {
-      result.sort((a, b) => b.price - a.price);
-    } else if (sortOption === 'rating') {
+    if (sortOption === 'rating') {
       result.sort((a, b) => (b.rating || 0) - (a.rating || 0));
     } else if (sortOption === 'newest') {
       result.sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime());
@@ -75,8 +71,6 @@ export default function CataloguePage() {
             >
               <option value="newest">Newly Added</option>
               <option value="rating">Top Rated</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
             </select>
           </div>
         </div>

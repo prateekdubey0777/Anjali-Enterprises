@@ -8,8 +8,6 @@ import { notFound } from 'next/navigation';
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [calcWidth, setCalcWidth] = useState<string>('');
-  const [calcHeight, setCalcHeight] = useState<string>('');
   const resolvedParams = use(params);
 
   const product = mockProducts.find(p => p.id === resolvedParams.id);
@@ -17,8 +15,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   if (!product) {
     notFound();
   }
-
-  const hasDiscount = product.discount_price && product.discount_price < product.price;
 
   return (
     <div className="bg-white min-h-screen py-12">
@@ -48,11 +44,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 className="object-contain p-2"
               />
             </button>
-            {/* Thumbnails if multiple images existed */}
             {product.images.length > 1 && (
               <div className="flex gap-4 overflow-x-auto pb-2">
                 {product.images.map((img: string, idx: number) => (
-                  <div key={idx} className="relative h-24 w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-yellow-500 cursor-pointer">
+                  <div key={idx} className="relative h-24 w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-500 cursor-pointer">
                      <Image src={img} alt={`${product.name} ${idx}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -71,55 +66,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{product.name}</h1>
             <p className="text-gray-500 text-sm mb-6">SKU: {product.sku}</p>
-            
-            <div className="mb-6 flex items-end gap-4">
-              {hasDiscount ? (
-                <>
-                  <span className="text-4xl font-bold text-blue-900">₹{product.discount_price!.toFixed(2)} <span className="text-xl text-gray-500 font-normal">{product.unit ? `/ ${product.unit}` : '/ sq. ft.'}</span></span>
-                  <span className="text-xl text-gray-400 line-through mb-1">₹{product.price.toFixed(2)}</span>
-                  <span className="text-sm font-bold text-green-600 mb-1 bg-green-50 px-2 py-1 rounded">Save ₹{(product.price - product.discount_price!).toFixed(2)}</span>
-                </>
-              ) : (
-                <span className="text-4xl font-bold text-blue-900">₹{product.price.toFixed(2)} <span className="text-xl text-gray-500 font-normal">{product.unit ? `/ ${product.unit}` : '/ sq. ft.'}</span></span>
-              )}
-            </div>
-
-            {/* Rate Calculator */}
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-8">
-              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                Custom Size Price Calculator
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                {product.unit === 'running ft' 
-                  ? 'Available in all sizes. Enter your frame requirements (perimeter is calculated as 2 × (width + height)):' 
-                  : 'Available in all sizes. Enter your requirements in feet:'}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                <div className="flex-1">
-                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Width (ft)</label>
-                  <input type="number" placeholder="e.g. 3" className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" value={calcWidth} onChange={(e) => setCalcWidth(e.target.value)} />
-                </div>
-                <div className="flex-1">
-                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Height (ft)</label>
-                  <input type="number" placeholder="e.g. 6" className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" value={calcHeight} onChange={(e) => setCalcHeight(e.target.value)} />
-                </div>
-              </div>
-              <div className="flex items-center justify-between border-t border-blue-100 pt-4 mt-2">
-                <span className="text-gray-700 font-medium">Estimated Total:</span>
-                <span className="text-2xl font-bold text-blue-900">
-                  ₹{(() => {
-                    const w = parseFloat(calcWidth) || 0;
-                    const h = parseFloat(calcHeight) || 0;
-                    const price = product.discount_price || product.price;
-                    if (product.unit === 'running ft') {
-                      return ((w + h) * 2 * price).toFixed(2);
-                    }
-                    return (w * h * price).toFixed(2);
-                  })()}
-                </span>
-              </div>
-            </div>
 
             <p className="text-gray-700 text-base leading-relaxed mb-8">{product.description}</p>
 
